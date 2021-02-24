@@ -4,3 +4,6 @@
 [submodule "DataControl"]
 	path = DataControl
 	url = https://github.com/Ghost4dot2/DataControl
+[submodule "EmployeeForm"]
+	path = EmployeeForm
+	url = https://github.com/Ghost4dot2/EmployeeForm.git
