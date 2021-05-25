@@ -3,10 +3,19 @@ services:
         image: rabbitmq:3-management-alpine
         container_name: rabbitmq
         ports:
-            -5672:5672
-            -15672:15672
+            - "5672:5672"
+            - "15672:15672"
     employee-form:
-    
+        build: 
+            context: WebApplication1/
+            dockerfile: Dockerfile
+        ports:
+            - "5000:80"
     data-control:
+        build:
+            context: DataControl/
+            dockerfile: Dockerfile
     norwthind-sql:
-volumes:
+        build: 
+            context: NorthwindServer/
+            dockerfile: Dockerfile
