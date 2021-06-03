@@ -1,0 +1,1 @@
+dotnet WebApplication1\WebApplication1\bin\Release\net5.0\WebApplication1.dll

@@ -5,17 +5,34 @@ services:
         ports:
             - "5672:5672"
             - "15672:15672"
+    northwind-sql:
+        build: 
+            context: NorthwindServer/
+            dockerfile: Dockerfile
+        ports:
+            - "1433:1433"
+        environment:
+            - SA_PASSWORD=AStupidPassword1@
+            - ACCEPT_EULA=Y
+            - MSSQL_PID=Express
     employee-form:
         build: 
             context: WebApplication1/
             dockerfile: Dockerfile
         ports:
             - "5000:80"
+        depends_on:
+            - rabbitmq
+        links:
+            - rabbitmq
     data-control:
         build:
             context: DataControl/
             dockerfile: Dockerfile
-    norwthind-sql:
-        build: 
-            context: NorthwindServer/
-            dockerfile: Dockerfile
+        depends_on:
+            - rabbitmq
+            - northwind-sql
+        links:
+            - rabbitmq
+            - northwind-sql
+        restart: on-failure
