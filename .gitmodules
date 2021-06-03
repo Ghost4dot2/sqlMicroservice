@@ -1,8 +1,6 @@
 [submodule "NorthwindServer"]
 	path = NorthwindServer
-	url = https://github.com/Ghost4dot2/NorthwindServer
-
-
+	url = https://github.com/Ghost4dot2/NorthwindServer.git
 [submodule "WebApplication1"]
 	path = WebApplication1
 	url = https://github.com/Ghost4dot2/WebApplication1.git
